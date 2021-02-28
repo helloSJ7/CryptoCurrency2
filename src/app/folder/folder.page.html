@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <h6 class="ion-text-center"><b>Prices</b></h6>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <p class="ion-text-center sub-Title">
+    <ion-icon class="downarrow" name="chevron-down"></ion-icon>Global Market Cap :$178,237,534,086.27</p>
+  <ion-searchbar class="ion-no-border" placeholder="Search Coins..." [(ngModel)]="searchedName"
+    (ionInput)="findName($event)" (ionCancel)="dismiss()">
+  </ion-searchbar>
+  <ion-row class="headerContent">
+    <ion-col size="6">
+      <p class="name">Name</p>
+    </ion-col>
+    <ion-col size="3" class="ion-text-end">
+      <p>Price</p>
+    </ion-col>
+    <ion-col size="3" class="ion-text-end">
+      <p>Change</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="dataContent" *ngFor="let item of CryptoCurrency; index as i">
+    <ion-col size="6">
+     <p class="sNo">{{i+1}}</p> <p><ion-text color="secondary">({{item.symbol}})</ion-text> {{item.name}}</p>
+    </ion-col>
+    <ion-col size="3" class="ion-text-end">
+      <p><b>{{item.priceUsd | currency}}</b></p>
+    </ion-col>
+    <ion-col size="3" class="ion-text-end">
+      <p>
+        <ion-text color="danger">{{item.changePercent24Hr | number:'1.0-2'}}%</ion-text>
+      </p>
+    </ion-col>
+  </ion-row>
+</ion-content>

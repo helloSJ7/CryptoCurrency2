@@ -1,0 +1,59 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+.searchbar-search-icon {
+    right: 16px !important;
+    left: auto !important;
+    opacity: 0.5;
+  }
+.searchbar-search-icon.sc-ion-searchbar-md {
+    width: 15px;
+  }
+.sc-ion-buttons-md-h {
+    position: absolute;
+  }
+.searchbar-clear-icon {
+    display: none !important;
+  }
+.searchbar-input.sc-ion-searchbar-md{
+    font-family: 'Poppins-Regular';
+    border: 1px solid #e6e5e5;
+    padding: 6px;
+    border-radius: 6px;
+  }
+.sc-ion-searchbar-md-h {
+    --box-shadow: none !important
+  }
+@font-face{
+    font-family: 'Poppins-Regular';
+    src: url('/assets/Font/Poppins-Regular.ttf');
+  }
+ion-title{
+    font-family: 'Poppins-Regular';
+  }
+    
